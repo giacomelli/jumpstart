@@ -40,12 +40,15 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="JumpStartOptions.cs" />
     <Compile Include="Prebuilder.cs" />
-    <Compile Include="ILog.cs" />
-    <Compile Include="VerboseLog.cs" />
-    <Compile Include="NoVerboseLog.cs" />
+    <Compile Include="Logging\ILog.cs" />
+    <Compile Include="Logging\NoVerboseLog.cs" />
+    <Compile Include="Logging\VerboseLog.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Logging\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>
