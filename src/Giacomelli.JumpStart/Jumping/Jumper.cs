@@ -5,6 +5,10 @@ using HelperSharp;
 
 namespace Giacomelli.JumpStart
 {
+	/// <summary>
+	/// Performs the jump start.
+	/// Here is where the real job of jumpstart happens.
+	/// </summary>
 	public class Jumper
 	{
 		#region Fields
@@ -13,6 +17,11 @@ namespace Giacomelli.JumpStart
 		#endregion
 
 		#region Constructors
+		/// <summary>
+		/// Initializes a new instance of the <see cref="T:Giacomelli.JumpStart.Jumper"/> class.
+		/// </summary>
+		/// <param name="options">Options.</param>
+		/// <param name="log">Log.</param>
 		public Jumper(JumpStartOptions options, ILog log)
 		{
 			m_options = options;
@@ -21,6 +30,9 @@ namespace Giacomelli.JumpStart
 		#endregion
 
 		#region Methods
+		/// <summary>
+		/// Performs the jump start.
+		/// </summary>
 		public void Jump()
 		{
 			var currentPath = AppDomain.CurrentDomain.BaseDirectory;
