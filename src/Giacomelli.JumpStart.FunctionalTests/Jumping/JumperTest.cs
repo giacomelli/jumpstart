@@ -6,7 +6,7 @@ using TestSharp;
 namespace Giacomelli.JumpStart.FunctionalTests
 {
 	[TestFixture]
-	public class JumpStarterTest
+	public class JumperTest
 	{
 		[SetUp]
 		public void InitializeTest()
@@ -89,8 +89,8 @@ namespace Giacomelli.JumpStart.FunctionalTests
 				"-tf", Path.Combine(resourcesFolder, templateNamespace),
 				"-tn", templateNamespace);
 
-			var target = new Prebuilder(options, new NoVerboseLog());
-			target.Build();
+			var target = new Jumper(options, new NoVerboseLog());
+			target.Jump();
 		}
 
 		private static void AssertFile(string filePath, string expectedFileContent, string notExpectedFileContent)

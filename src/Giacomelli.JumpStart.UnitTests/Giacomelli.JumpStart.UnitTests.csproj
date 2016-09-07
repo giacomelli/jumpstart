@@ -36,7 +36,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="JumpStartOptionsTest.cs" />
+    <Compile Include="Jumping\JumpStartOptionsTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -46,6 +46,9 @@
       <Project>{B0911D64-EF6C-442C-B767-588073791157}</Project>
       <Name>Giacomelli.JumpStart</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Jumping\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>

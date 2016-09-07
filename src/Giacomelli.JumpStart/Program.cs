@@ -20,8 +20,8 @@ namespace Giacomelli.JumpStart
 				else
 				{
 					Show("Jump starting...");
-					var prebuilder = new Prebuilder(options, CreateLog(options));
-					prebuilder.Build();
+					var prebuilder = new Jumper(options, CreateLog(options));
+					prebuilder.Jump();
 					Show("Jump start done.");
 				}
 			}

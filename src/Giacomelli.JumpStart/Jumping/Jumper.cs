@@ -5,7 +5,7 @@ using HelperSharp;
 
 namespace Giacomelli.JumpStart
 {
-	public class Prebuilder
+	public class Jumper
 	{
 		#region Fields
 		private JumpStartOptions m_options;
@@ -13,7 +13,7 @@ namespace Giacomelli.JumpStart
 		#endregion
 
 		#region Constructors
-		public Prebuilder(JumpStartOptions options, ILog log)
+		public Jumper(JumpStartOptions options, ILog log)
 		{
 			m_options = options;
 			m_log = log;
@@ -21,12 +21,7 @@ namespace Giacomelli.JumpStart
 		#endregion
 
 		#region Methods
-		public void Build()
-		{
-			CopyTemplateToFolder();
-		}
-
-		private void CopyTemplateToFolder()
+		public void Jump()
 		{
 			var currentPath = AppDomain.CurrentDomain.BaseDirectory;
 			var templateFolder = Path.Combine(currentPath, m_options.TemplateFolder);
