@@ -1,0 +1,29 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Giacomelli.JumpStart", "Giacomelli.JumpStart\Giacomelli.JumpStart.csproj", "{B0911D64-EF6C-442C-B767-588073791157}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Giacomelli.JumpStart.UnitTests", "Giacomelli.JumpStart.UnitTests\Giacomelli.JumpStart.UnitTests.csproj", "{76A61FCA-E102-4636-B0AD-4E1ACDE74927}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Giacomelli.JumpStart.FunctionalTests", "Giacomelli.JumpStart.FunctionalTests\Giacomelli.JumpStart.FunctionalTests.csproj", "{2A3B87C9-0290-4F60-B787-51DDEC81B2CB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B0911D64-EF6C-442C-B767-588073791157}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B0911D64-EF6C-442C-B767-588073791157}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B0911D64-EF6C-442C-B767-588073791157}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B0911D64-EF6C-442C-B767-588073791157}.Release|Any CPU.Build.0 = Release|Any CPU
+		{76A61FCA-E102-4636-B0AD-4E1ACDE74927}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{76A61FCA-E102-4636-B0AD-4E1ACDE74927}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{76A61FCA-E102-4636-B0AD-4E1ACDE74927}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{76A61FCA-E102-4636-B0AD-4E1ACDE74927}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2A3B87C9-0290-4F60-B787-51DDEC81B2CB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2A3B87C9-0290-4F60-B787-51DDEC81B2CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2A3B87C9-0290-4F60-B787-51DDEC81B2CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2A3B87C9-0290-4F60-B787-51DDEC81B2CB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
