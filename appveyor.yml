@@ -35,7 +35,7 @@ after_build:
 
 test_script:
  - ps: >-
-    nunit3-console.exe "src\Giacomelli.JumpStart.UnitTests\bin\$env:CONFIGURATION\Giacomelli.JumpStart.UnitTests.dll  .\src\Infrastructure.IO.FunctionalTests\bin\$env:CONFIGURATION\Giacomelli.Unity.Metadata.Infrastructure.IO.FunctionalTests.dll"
+    nunit3-console.exe "src\Giacomelli.JumpStart.UnitTests\bin\$env:CONFIGURATION\Giacomelli.JumpStart.UnitTests.dll src\Giacomelli.JumpStart.FunctionalTests\bin\$env:CONFIGURATION\Giacomelli.JumpStart.FunctionalTests.dll"
 
  - ps: >-
     .\src\packages\OpenCover.4.6.519\tools\OpenCover.Console.exe -skipautoprops -register:user -target:nunit3-console.exe "-targetargs:src\Giacomelli.JumpStart.UnitTests\bin\$env:CONFIGURATION\Giacomelli.JumpStart.UnitTests.dll src\Giacomelli.JumpStart.FunctionalTests\bin\$env:CONFIGURATION\Giacomelli.JumpStart.FunctionalTests.dll" -filter:"+[Giacomelli.JumpStart]*" -output:opencoverCoverage.xml
