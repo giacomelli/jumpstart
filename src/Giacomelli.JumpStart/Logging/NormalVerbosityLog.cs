@@ -5,8 +5,11 @@ namespace Giacomelli.JumpStart
 	/// <summary>
 	/// A normal verbosity log implementation to jumpstart.
 	/// </summary>
-	public class NormalVerbosityLog : ILog
+	public class NormalVerbosityLog : ILog, IProgress
 	{
+		private float m_totalFiles;
+
+
 		/// <summary>
 		/// Write a debug level message to log.
 		/// </summary>
@@ -43,6 +46,21 @@ namespace Giacomelli.JumpStart
 		public virtual void Error(string message, params object[] args)
 		{
 			Console.WriteLine(message, args);
+		}
+
+		void IProgress.NotifyBegin(int totalFiles)
+		{
+			m_totalFiles = totalFiles; 
+		}
+
+		void IProgress.NotifyFile(int fileNumber, string fileName)
+		{
+			Console.Write("\rProgress: {0:p0}", fileNumber / m_totalFiles);
+		}
+
+		void IProgress.NotifyEnd()
+		{
+			Console.WriteLine(String.Empty);
 		}
 	}
 }

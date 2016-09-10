@@ -13,6 +13,7 @@ namespace Giacomelli.JumpStart
 	{
 		#region Fields
 		private JumpStartOptions m_options;
+		private IProgress m_progress;
 		private ILog m_log;
 		#endregion
 
@@ -25,6 +26,7 @@ namespace Giacomelli.JumpStart
 		public Jumper(JumpStartOptions options, ILog log)
 		{
 			m_options = options;
+			m_progress = (log as IProgress) ?? new EmptyProgress();
 			m_log = log;
 		}
 		#endregion
@@ -61,21 +63,34 @@ namespace Giacomelli.JumpStart
 
 		private void CopyDir(string src, string dest, Func<string, string, string> transformFileContent)
 		{
-			foreach (string path in Directory.GetDirectories(src, "*", SearchOption.AllDirectories))
+			// Get source dirs and files.
+			var dirs = Directory.GetDirectories(src, "*", SearchOption.AllDirectories);
+			var files = Directory.GetFiles(src, "*.*", SearchOption.AllDirectories);
+			m_progress.NotifyBegin(files.Length);
+
+			// Create the destination dirs.
+			Directory.CreateDirectory(dest);
+
+			foreach (string path in dirs)
 			{
 				var newPath = ToNewPath(path, src, dest);
 				m_log.Debug("Creating dir '{0}'", newPath);
 				Directory.CreateDirectory(ToNewPath(path, src, dest));
 			}
 
+			// Only files that respect this regex will be content transformed.
 			var filePatternRegex = new Regex("({0})".With(m_options.FilesRegex), RegexOptions.Compiled | RegexOptions.IgnoreCase);
 
-			foreach (string path in Directory.GetFiles(src, "*.*", SearchOption.AllDirectories))
+			// Copy each source file to destination.
+			for (int i = 0; i < files.Length; i++)
 			{
-				var newPath = ToNewPath(path, src, dest);
+				var file = files[i];
+				var newPath = ToNewPath(file, src, dest);
 				m_log.Debug("Copying file '{0}'", newPath);
-				File.Copy(path, newPath, true);
+				File.Copy(file, newPath, true);
 
+				// If file matchs the regex, read its content and replace the template
+				// namespace to new namespace.
 				if (filePatternRegex.IsMatch(newPath))
 				{
 					var content = File.ReadAllText(newPath);
@@ -87,7 +102,11 @@ namespace Giacomelli.JumpStart
 						File.WriteAllText(newPath, newContent);
 					}
 				}
+
+				m_progress.NotifyFile(i + 1, file);
 			}
+
+			m_progress.NotifyEnd();
 		}
 
 		private string ToNewPath(string path, string src, string dest)
