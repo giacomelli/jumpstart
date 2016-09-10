@@ -111,9 +111,12 @@ namespace Giacomelli.JumpStart
 
 		private string ToNewPath(string path, string src, string dest)
 		{
-			var newPath = path.Replace(src, dest);
+			var relativePath = path.Replace(src, string.Empty);
+			relativePath = relativePath.Replace(m_options.TemplateNamespace, m_options.Namespace);
 
-			return newPath.Replace(m_options.TemplateNamespace, m_options.Namespace);
+			var isRooted = relativePath.StartsWith("/", StringComparison.OrdinalIgnoreCase);
+
+			return Path.Combine(dest, isRooted ? relativePath.Substring(1) : relativePath);
 		}
 		#endregion
 

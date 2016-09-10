@@ -41,6 +41,23 @@ namespace Giacomelli.JumpStart.FunctionalTests
 		}
 
 		[Test]
+		public void Build_ClassLibraryTemplateWithPartialName_Built()
+		{
+			if (Directory.Exists("Sample.ClassLibraryTemplate.New"))
+			{
+				Directory.Delete("Sample.ClassLibraryTemplate.New", true);
+			}
+
+			var templateNamespace = "Sample.ClassLibraryTemplate";
+			Build(templateNamespace, "Sample.ClassLibraryTemplate.New", "Sample.ClassLibraryTemplate.New");
+
+			AssertFile("Sample.ClassLibraryTemplate.New.sln", "Sample.ClassLibraryTemplate.New", "N/A", "Sample.ClassLibraryTemplate.New");
+			AssertFile("Sample.ClassLibraryTemplate.New/Sample.ClassLibraryTemplate.New.csproj", "Sample.ClassLibraryTemplate.New", "N/A", "Sample.ClassLibraryTemplate.New");
+			AssertFile("Sample.ClassLibraryTemplate.New/MyClass.cs", "namespace Sample.ClassLibraryTemplate.New", "N/A", "Sample.ClassLibraryTemplate.New");
+			AssertFile("Sample.ClassLibraryTemplate.New/Properties/AssemblyInfo.cs", "[assembly: AssemblyTitle(\"Sample.ClassLibraryTemplate.New\")]", "N/A", "Sample.ClassLibraryTemplate.New");
+		}
+
+		[Test]
 		public void Build_ComplexTemplate_Built()
 		{
 			var templateNamespace = "Sample.ComplexTemplate";
@@ -88,15 +105,15 @@ namespace Giacomelli.JumpStart.FunctionalTests
 			AssertFile("My.Test.userprefs", "My.Test", templateNamespace);
 		}
 
-		private void Build(string templateNamespace)
+		private void Build(string templateNamespace, string n = "My.Test", string f = "TestsResults")
 		{
 			var resourcesFolder = VSProjectHelper.GetProjectFolderPath("Giacomelli.JumpStart.FunctionalTests");
 			resourcesFolder = Path.Combine(resourcesFolder, "Resources");
 
 
 			var options = JumpStartOptions.Create(
-				"-n", "My.Test",
-				"-f", "TestsResults",
+				"-n", n,
+				"-f", f,
 				"-tf", Path.Combine(resourcesFolder, templateNamespace),
 				"-tn", templateNamespace);
 
@@ -105,9 +122,9 @@ namespace Giacomelli.JumpStart.FunctionalTests
 			target.Jump();
 		}
 
-		private static void AssertFile(string filePath, string expectedFileContent, string notExpectedFileContent)
+		private static void AssertFile(string filePath, string expectedFileContent, string notExpectedFileContent, string rootFolder = "TestsResults")
 		{
-			var fileName = Path.Combine("TestsResults", filePath);
+			var fileName = Path.Combine(rootFolder, filePath);
 			TestSharp.FileAssert.ContainsContent(expectedFileContent, fileName);
 			Assert.IsFalse(TestSharp.FileHelper.ContainsContent(fileName, notExpectedFileContent));
 		}
