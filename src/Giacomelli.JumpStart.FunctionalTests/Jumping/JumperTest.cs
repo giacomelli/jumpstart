@@ -11,6 +11,8 @@ namespace Giacomelli.JumpStart.FunctionalTests
 		[SetUp]
 		public void InitializeTest()
 		{
+			Environment.CurrentDirectory = AppDomain.CurrentDomain.BaseDirectory;
+
 			if (Directory.Exists("TestsResults"))
 			{
 				Directory.Delete("TestsResults", true);
