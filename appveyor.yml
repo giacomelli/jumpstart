@@ -1,6 +1,6 @@
 version: 1.0.{build}
 os: Visual Studio 2015
-configuration: Release
+configuration: Debug
 environment:
   COVERALLS_REPO_TOKEN:
     secure: WXVxHZDkwYdUeDeyXgE82JddlTnqVGTlX0PY02k0xlqL89gDAJIQIbYOX0qepw5Q
@@ -34,9 +34,6 @@ after_build:
     .\tools\build-ci.cmd
 
 test_script:
- - ps: >-
-    nunit3-console.exe ".\src\Giacomelli.JumpStart.UnitTests\bin\$env:CONFIGURATION\Giacomelli.JumpStart.UnitTests.dll"
-
  - ps: >-
     .\src\packages\OpenCover.4.6.519\tools\OpenCover.Console.exe -skipautoprops -register:user -target:nunit3-console.exe "-targetargs:src\Giacomelli.JumpStart.UnitTests\bin\$env:CONFIGURATION\Giacomelli.JumpStart.UnitTests.dll" -filter:"+[Giacomelli.JumpStart]*" -output:opencoverCoverage.xml
 
