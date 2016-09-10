@@ -116,3 +116,5 @@ stylecop-report.xml
 dupFinder-report.xml
 src/Giacomelli.JumpStart.FunctionalTests/Resources/Sample.Unity3dTemplate/Unity/Library
 build
+coverage.xml
+tools/CoverageReport
