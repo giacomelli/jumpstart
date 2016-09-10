@@ -15,7 +15,7 @@ The idea of tool was born a long time ago and became a little stronger every tim
 
 ![](docs/images/Xamarin-jumpstart-message.png)
 
-> The first name that I thought to the tool was prebuilt, but later my friend @GiuspeCasagrande convinced me that jumpstart was really better name... and he was right!
+> The first name that I thought to the tool was prebuilt, but later my friend @GiusepeCasagrande convinced me that jumpstart was really better name... and he was right!
 
 --------
 
