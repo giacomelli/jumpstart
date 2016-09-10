@@ -7,7 +7,7 @@ jumpstart
 [![DupFinder](http://badgessharp.apphb.com/badges/giacomelli/jumpstart/DupFinder)](https://ci.appveyor.com/project/giacomelli/jumpstart/build/artifacts)
 [![License](http://img.shields.io/:license-MIT-blue.svg)](https://raw.githubusercontent.com/giacomelli/jumpstart/master/LICENSE)
 
-jumpstart is a command-line tool to create new .NET projects from prebuilt/templates.
+jumpstart is a command-line tool to create new C# projects from prebuilt/templates.
 
 As experienced developers it's very common we have some kind of template solution when we start a new project. Maybe is the latest project we work on, maybe is a very good template we used all time to start a bootstrap of specific kind of project. I created jumpstart to simplify the process of create the new project based on those templates or prebuilt solutions.
 
