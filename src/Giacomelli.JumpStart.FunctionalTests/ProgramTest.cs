@@ -15,6 +15,11 @@ namespace Giacomelli.JumpStart.FunctionalTests
 		[SetUp]
 		public void InitializeTest()
 		{
+			if (Directory.Exists("Test1"))
+			{
+				Directory.Delete("Test1", true);
+			}
+
 			s_sampleProjectFolder = VSProjectHelper.GetProjectFolderPath("Giacomelli.JumpStart.FunctionalTests");
 			s_sampleProjectFolder = Path.Combine(s_sampleProjectFolder, "Resources", "Sample.ClassLibraryTemplate");
 

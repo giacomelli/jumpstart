@@ -18,6 +18,15 @@ namespace Giacomelli.JumpStart.FunctionalTests
 		}
 
 		[Test]
+		public void Build_SimpleTemplate_Built()
+		{
+			var templateNamespace = "Sample.SimpleTemplate";
+			Build(templateNamespace);
+
+			AssertFile("MyClass.cs", "namespace My.Test", templateNamespace);
+		}
+
+		[Test]
 		public void Build_ClassLibraryTemplate_Built()
 		{
 			var templateNamespace = "Sample.ClassLibraryTemplate";
@@ -89,7 +98,8 @@ namespace Giacomelli.JumpStart.FunctionalTests
 				"-tf", Path.Combine(resourcesFolder, templateNamespace),
 				"-tn", templateNamespace);
 
-			var target = new Jumper(options, new QuietVerbosityLog());
+			var log = new QuietVerbosityLog();
+			var target = new Jumper(options, log);
 			target.Jump();
 		}
 
