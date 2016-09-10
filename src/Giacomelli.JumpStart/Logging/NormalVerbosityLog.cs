@@ -15,7 +15,7 @@ namespace Giacomelli.JumpStart
 		/// </summary>
 		/// <param name="message">Message.</param>
 		/// <param name="args">Arguments.</param>
-		public virtual void Debug(string message, params object[] args)
+		public void Debug(string message, params object[] args)
 		{
 		}
 
@@ -24,7 +24,7 @@ namespace Giacomelli.JumpStart
 		/// </summary>
 		/// <param name="message">Message.</param>
 		/// <param name="args">Arguments.</param>
-		public virtual void Info(string message, params object[] args)
+		public void Info(string message, params object[] args)
 		{
 		}
 
@@ -33,7 +33,7 @@ namespace Giacomelli.JumpStart
 		/// </summary>
 		/// <param name="message">Message.</param>
 		/// <param name="args">Arguments.</param>
-		public virtual void Warn(string message, params object[] args)
+		public void Warn(string message, params object[] args)
 		{
 			Console.WriteLine(message, args);
 		}
@@ -43,7 +43,7 @@ namespace Giacomelli.JumpStart
 		/// </summary>
 		/// <param name="message">Message.</param>
 		/// <param name="args">Arguments.</param>
-		public virtual void Error(string message, params object[] args)
+		public void Error(string message, params object[] args)
 		{
 			Console.WriteLine(message, args);
 		}
