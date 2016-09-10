@@ -5,7 +5,7 @@ namespace Giacomelli.JumpStart
 	/// <summary>
 	/// A normal verbosity log implementation to jumpstart.
 	/// </summary>
-	public class NormalVerbosityLog : ILog, IProgress
+	public sealed class NormalVerbosityLog : ILog, IProgress
 	{
 		private float m_totalFiles;
 

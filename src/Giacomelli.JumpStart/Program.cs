@@ -5,7 +5,7 @@ namespace Giacomelli.JumpStart
 	/// <summary>
 	/// Program main class.
 	/// </summary>
-	public class MainClass
+	public static class MainClass
 	{
 		private static ILog s_log;
 

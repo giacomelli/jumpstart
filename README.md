@@ -1,7 +1,7 @@
 jumpstart
 ===========
 
-[![Build status](https://ci.appveyor.com/api/projects/status/h9ptxpyj30ah3mva?svg=true)](https://ci.appveyor.com/project/giacomelli/jumpstart)
+[![Build status](https://ci.appveyor.com/api/projects/status/00v2mfh13jolfyhd?svg=true)](https://ci.appveyor.com/project/giacomelli/jumpstart)
 [![Coverage Status](https://coveralls.io/repos/giacomelli/jumpstart/badge.svg?branch=master&service=github)](https://coveralls.io/github/giacomelli/jumpstart?branch=master)
 [![FxCop](http://badgessharp.apphb.com/badges/giacomelli/jumpstart/FxCop)](https://ci.appveyor.com/project/giacomelli/jumpstart/build/artifacts)
 [![DupFinder](http://badgessharp.apphb.com/badges/giacomelli/jumpstart/DupFinder)](https://ci.appveyor.com/project/giacomelli/jumpstart/build/artifacts)
@@ -15,7 +15,7 @@ The idea of tool was born a long time ago and became a little stronger every tim
 
 ![](docs/images/Xamarin-jumpstart-message.png)
 
-> The first name that I thought to the tool was prebuilt, but later my friend @GiusepeCasagrande convinced me that jumpstart was really better name... and he was right!
+> The first name that I thought to the tool was prebuilt, but later my friend [@GiusepeCasagrande](https://github.com/GiusepeCasagrande) convinced me that jumpstart was really better name... and he was right!
 
 --------
 

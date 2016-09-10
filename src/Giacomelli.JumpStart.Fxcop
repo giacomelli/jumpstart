@@ -30,7 +30,7 @@
   <RuleFiles>
    <RuleFile Name="$(FxCopDir)\Rules\DesignRules.dll" Enabled="True" AllRulesEnabled="False">
     <Rule Name="AbstractTypesShouldNotHaveConstructors" Enabled="True" />
-    <Rule Name="AssembliesShouldHaveValidStrongNames" Enabled="True" />
+    <Rule Name="AssembliesShouldHaveValidStrongNames" Enabled="False" />
     <Rule Name="AvoidEmptyInterfaces" Enabled="True" />
     <Rule Name="AvoidExcessiveParametersOnGenericTypes" Enabled="True" />
     <Rule Name="AvoidOutParameters" Enabled="True" />
@@ -63,8 +63,8 @@
     <Rule Name="InterfaceMethodsShouldBeCallableByChildTypes" Enabled="True" />
     <Rule Name="ListsAreStronglyTyped" Enabled="True" />
     <Rule Name="MarkAssembliesWithAssemblyVersion" Enabled="True" />
-    <Rule Name="MarkAssembliesWithClsCompliant" Enabled="True" />
-    <Rule Name="MarkAssembliesWithComVisible" Enabled="True" />
+    <Rule Name="MarkAssembliesWithClsCompliant" Enabled="False" />
+    <Rule Name="MarkAssembliesWithComVisible" Enabled="False" />
     <Rule Name="MarkAttributesWithAttributeUsage" Enabled="True" />
     <Rule Name="MarkEnumsWithFlags" Enabled="True" />
     <Rule Name="MembersShouldNotExposeCertainConcreteTypes" Enabled="True" />
