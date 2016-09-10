@@ -11,9 +11,11 @@ jumpstart is a command-line tool to create new .NET projects from prebuilt/templ
 
 As experienced developers is common we have some kind of template solution when we start a new project. Maybe is the latest project we work on, maybe is a very good template we used all time to start a bootstrap of specific kind of project. I created jumpstart to simplify the process of create the new project based on those templates or prebuilt solutions.
 
-The idea of tool was born a long time ago and became a little stronger every time that I had to create a new project solution and had to create all the solution by hand, but when I saw the message bellow in the [http://xamarin.com/prebuilt](http://xamarin.com/prebuilt ) page I decide to finaly write the tool... and name was very clear.
+The idea of tool was born a long time ago and became a little stronger every time that I had to create a new project solution and had to create all the solution by hand, but when I saw the message bellow in the [http://xamarin.com/prebuilt](http://xamarin.com/prebuilt ) page I decide to finaly write the tool... and name was very clear, almost.
 
 ![](docs/images/Xamarin-jumpstart-message.png)
+
+> The first name that I thought to the tool was prebuilt, but later my friend @GiuspeCasagrande convinced me that jumpstart was really better name... and he was right!
 
 --------
 
