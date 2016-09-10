@@ -41,10 +41,12 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Logging\ILog.cs" />
-    <Compile Include="Logging\NoVerboseLog.cs" />
-    <Compile Include="Logging\VerboseLog.cs" />
+    <Compile Include="Logging\DiagnosticVerbosityLog.cs" />
     <Compile Include="Jumping\Jumper.cs" />
     <Compile Include="Jumping\JumpStartOptions.cs" />
+    <Compile Include="Logging\QuietVerbosityLog.cs" />
+    <Compile Include="Logging\NormalVerbosityLog.cs" />
+    <Compile Include="Logging\DetailsVerbosityLog.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

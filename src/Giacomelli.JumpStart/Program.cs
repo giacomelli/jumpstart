@@ -2,54 +2,60 @@ using System;
 
 namespace Giacomelli.JumpStart
 {
-	class MainClass
+	/// <summary>
+	/// Program main class.
+	/// </summary>
+	public class MainClass
 	{
+		private static ILog s_log;
+
+		/// <summary>
+		/// The entry point of the program, where the program control starts and ends.
+		/// </summary>
+		/// <param name="args">The command-line arguments.</param>
 		public static void Main(string[] args)
 		{
-			Show("jumpstart v.{0}", typeof(MainClass).Assembly.GetName().Version);
-			Show("by Diego Giacomelli (https://twitter.com/ogiacomelli)\n");
-
 			try
 			{
 				var options = JumpStartOptions.Create(args);
+				s_log = CreateLog(options);
+				                  
+				s_log.Warn ("jumpstart v.{0}", typeof(MainClass).Assembly.GetName().Version);
+				s_log.Warn("by Diego Giacomelli (https://twitter.com/ogiacomelli)\n");
 
 				if (options.ShowHelp)
 				{
-					Show(options.HelpText);
+					s_log.Warn(options.HelpText);
 				}
 				else
 				{
-					Show("Jump starting...");
-					var prebuilder = new Jumper(options, CreateLog(options));
+					s_log.Warn("Jump starting...");
+					var prebuilder = new Jumper(options, s_log);
 					prebuilder.Jump();
-					Show("Jump start done.");
+					s_log.Warn("Jump start done.");
 				}
 			}
 			catch (Exception ex)
 			{
-				Show(ex.Message);
+				Console.WriteLine(ex.Message);
 			}     
 		}
 
 		private static ILog CreateLog(JumpStartOptions options)
 		{
-			if (options.Verbose)
+			switch (options.Verbosity)
 			{
-				return new VerboseLog();
-			}
-
-			return new NoVerboseLog();
-		}
-
-		private static void Show(string message, params object[] args)
-		{
-			if (args.Length == 0)
-			{
-				Console.WriteLine(message);
-			}
-			else
-			{
-				Console.WriteLine(message, args);
+				case Verbosity.Quiet:
+					return new QuietVerbosityLog();
+					
+				case Verbosity.Details:
+					return new DetailsVerbosityLog();
+					
+				case Verbosity.Diagnostic:
+					return new DiagnosticVerbosityLog();
+					
+				default:
+					return new NormalVerbosityLog();
 			}
 		}
 	}

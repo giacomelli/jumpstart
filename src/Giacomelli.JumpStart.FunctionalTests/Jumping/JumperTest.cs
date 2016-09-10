@@ -89,7 +89,7 @@ namespace Giacomelli.JumpStart.FunctionalTests
 				"-tf", Path.Combine(resourcesFolder, templateNamespace),
 				"-tn", templateNamespace);
 
-			var target = new Jumper(options, new NoVerboseLog());
+			var target = new Jumper(options, new QuietVerbosityLog());
 			target.Jump();
 		}
 

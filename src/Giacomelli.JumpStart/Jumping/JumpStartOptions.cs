@@ -7,6 +7,32 @@ using Mono.Options;
 namespace Giacomelli.JumpStart
 {
 	/// <summary>
+	/// Verbosity kind.
+	/// </summary>
+	public enum Verbosity
+	{
+		/// <summary>
+		/// Quiet verbosity.
+		/// </summary>
+		Quiet = 0,
+
+		/// <summary>
+		/// Normal verbosity.
+		/// </summary>
+		Normal,
+
+		/// <summary>
+		/// Details verbosity. 
+		/// </summary>
+		Details,
+
+		/// <summary>
+		/// Diagnostic verbosity. 
+		/// </summary>
+		Diagnostic
+	}
+
+	/// <summary>
 	/// JumpStart options.
 	/// </summary>
 	public class JumpStartOptions
@@ -19,7 +45,8 @@ namespace Giacomelli.JumpStart
 			TemplateFolder = "jumpstart-template";
 			TemplateNamespace = "JumpStartTemplate";
 			Folder = null;
-			FilesRegex = @"(\.cs|\.cshtml|\.csproj|\.sln|\.meta|\.asax|\.userprefs|\.config|\.sh|\.cmd)";
+			FilesRegex = @"(\.cs|\.cshtml|\.csproj|\.sln|\.meta|\.asax|\.userprefs|\.config|\.sh|\.cmd)$";
+			Verbosity = Verbosity.Normal;
 		}
 
 		/// <summary>
@@ -29,10 +56,10 @@ namespace Giacomelli.JumpStart
 		public bool ShowHelp { get; private set; }
 
 		/// <summary>
-		/// Gets a value indicating whether this <see cref="T:Giacomelli.JumpStart.JumpStartOptions"/> is verbose.
+		/// Gets the verbosity.
 		/// </summary>
-		/// <value><c>true</c> if verbose; otherwise, <c>false</c>.</value>
-		public bool Verbose { get; private set; }
+		/// <value>The verbosity.</value>
+		public Verbosity Verbosity { get; private set; }
 
 		/// <summary>
 		/// Gets the help text.
@@ -125,7 +152,7 @@ namespace Giacomelli.JumpStart
 					fp => options.FilesRegex = fp
 				},
 				{
-					"v|verbose", "verbose log. Default: false", v => options.Verbose = v != null
+					"v|verbosity=", "verbosity level. Default: normal", v => options.Verbosity = (Verbosity)Enum.Parse(typeof(Verbosity), v, true)
 				},
 				{
 					"h|help", "show this message and exit", h => options.ShowHelp = h != null

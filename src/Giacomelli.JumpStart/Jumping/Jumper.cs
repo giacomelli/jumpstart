@@ -35,7 +35,7 @@ namespace Giacomelli.JumpStart
 		/// </summary>
 		public void Jump()
 		{
-			var currentPath = AppDomain.CurrentDomain.BaseDirectory;
+			var currentPath = Environment.CurrentDirectory;
 			var templateFolder = Path.Combine(currentPath, m_options.TemplateFolder);
 
 			if (!Directory.Exists(templateFolder))
@@ -83,7 +83,7 @@ namespace Giacomelli.JumpStart
 
 					if (!content.Equals(newContent, StringComparison.Ordinal))
 					{
-						m_log.Debug("{0} updated.", newPath);
+						m_log.Info("{0} updated.", newPath);
 						File.WriteAllText(newPath, newContent);
 					}
 				}
