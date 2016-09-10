@@ -22,9 +22,9 @@
  </ProjectOptions>
  <Targets>
   <AssemblyReferenceDirectories>
-   <Directory>$(ProjectDir)/Giacomelli.JumpStart/bin/Release/</Directory>
+   <Directory>$(ProjectDir)/Giacomelli.JumpStart/bin/Debug/</Directory>
   </AssemblyReferenceDirectories>
-  <Target Name="$(ProjectDir)/Giacomelli.JumpStart/bin/Release/jumpstart.exe" Analyze="True" AnalyzeAllChildren="True" />
+  <Target Name="$(ProjectDir)/Giacomelli.JumpStart/bin/Debug/jumpstart.exe" Analyze="True" AnalyzeAllChildren="True" />
  </Targets>
  <Rules>
   <RuleFiles>
