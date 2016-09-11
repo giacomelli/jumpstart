@@ -37,6 +37,8 @@
     <Reference Include="HelperSharp">
       <HintPath>..\packages\HelperSharp.0.0.4.2\lib\net35\HelperSharp.dll</HintPath>
     </Reference>
+    <Reference Include="System.IO.Compression.FileSystem" />
+    <Reference Include="System.IO.Compression" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Program.cs" />
@@ -50,6 +52,10 @@
     <Compile Include="Jumping\IProgress.cs" />
     <Compile Include="Jumping\ILog.cs" />
     <Compile Include="Jumping\EmptyProgress.cs" />
+    <Compile Include="Jumping\ITemplateFolderHandler.cs" />
+    <Compile Include="Jumping\LocalTemplateFolderHandler.cs" />
+    <Compile Include="Web\WebZipTemplateFolderHandler.cs" />
+    <Compile Include="Web\Downloader.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -57,6 +63,7 @@
   <ItemGroup>
     <Folder Include="Logging\" />
     <Folder Include="Jumping\" />
+    <Folder Include="Web\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>

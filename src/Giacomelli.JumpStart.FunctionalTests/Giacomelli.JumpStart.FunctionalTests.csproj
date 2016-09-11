@@ -44,6 +44,7 @@
   <ItemGroup>
     <Compile Include="ProgramTest.cs" />
     <Compile Include="Jumping\JumperTest.cs" />
+    <Compile Include="Web\WebZipTemplateFolderHandlerTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -56,6 +57,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Jumping\" />
+    <Folder Include="Web\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>

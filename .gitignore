@@ -118,3 +118,4 @@ build
 coverage.xml
 tools/CoverageReport
 Giacomelli.JumpStart.userprefs
+tools/CoverageReportr

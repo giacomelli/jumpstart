@@ -16,6 +16,7 @@ namespace Giacomelli.JumpStart
 		private JumpStartOptions m_options;
 		private IProgress m_progress;
 		private ILog m_log;
+		private ITemplateFolderHandler[] m_templateFolderHandlers;
 		#endregion
 
 		#region Constructors
@@ -29,6 +30,11 @@ namespace Giacomelli.JumpStart
 			m_options = options;
 			m_progress = (log as IProgress) ?? new EmptyProgress();
 			m_log = log;
+			m_templateFolderHandlers = new ITemplateFolderHandler[]
+			{
+				new LocalTemplateFolderHandler(),
+				new WebZipTemplateFolderHandler(log)
+			};
 		}
 		#endregion
 
@@ -40,18 +46,25 @@ namespace Giacomelli.JumpStart
 		public void Jump()
 		{
 			var currentPath = Environment.CurrentDirectory;
-			var templateFolder = Path.Combine(currentPath, m_options.TemplateFolder);
+			string templateFolder = m_options.TemplateFolder;
 
-			if (!Directory.Exists(templateFolder))
+			foreach (var handler in m_templateFolderHandlers)
+			{
+				templateFolder = handler.Process(templateFolder);
+			}
+
+			var templateFolderFullPath = Path.Combine(currentPath, templateFolder);
+
+			if (!Directory.Exists(templateFolderFullPath))
 			{
 				throw new InvalidOperationException(
-					"The folder with the template solution does not exists: {0}".With(templateFolder));
+					"The folder with the template solution does not exists: {0}".With(templateFolderFullPath));
 			}
 
 			var folder = Path.Combine(currentPath, m_options.Folder);
 
 			CopyDir(
-				templateFolder,
+				templateFolderFullPath,
 				folder,
 				(filePath, content) =>
 				{

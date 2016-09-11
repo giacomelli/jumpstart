@@ -60,6 +60,16 @@ namespace Giacomelli.JumpStart.FunctionalTests
 		}
 
 		[Test]
+		public void Run_WebZipTemplateFolder_Done()
+		{
+			var output = ProcessHelper.Run(s_exePath, "-n Test1 -tf https://github.com/xamarin/sport/archive/master.zip -tn Sport");
+
+			Assert.IsNotNull(output);
+			StringAssert.Contains("Downloading https://github.com/xamarin/sport/archive/master.zip", output);
+			StringAssert.Contains("done.", output);
+		}
+
+		[Test]
 		public void Run_VerbosityQuit_Done()
 		{
 			var output = ProcessHelper.Run(s_exePath, "-n Test1 -tf .. -v quiet");

@@ -125,7 +125,7 @@ namespace Giacomelli.JumpStart
 				"Options:",
 				{
 					"tf|template-folder=",
-					"The relative path folder where your template solution is located. Optional. Default: {0}"
+					"The relative path folder where your template solution is located or a remote zip file, like https://github.com/giacomelli/jumpstart/archive/master.zip. Optional. Default: {0}"
 					.With(options.TemplateFolder),
 					tf => options.TemplateFolder = tf
 				},
