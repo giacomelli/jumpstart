@@ -114,7 +114,7 @@ namespace Giacomelli.JumpStart
 			var relativePath = path.Replace(src, string.Empty);
 			relativePath = relativePath.Replace(m_options.TemplateNamespace, m_options.Namespace);
 
-			var isRooted = relativePath.StartsWith("/", StringComparison.OrdinalIgnoreCase);
+			var isRooted = relativePath.StartsWith(Path.DirectorySeparatorChar.ToString(), StringComparison.OrdinalIgnoreCase);
 
 			return Path.Combine(dest, isRooted ? relativePath.Substring(1) : relativePath);
 		}
