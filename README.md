@@ -73,14 +73,44 @@ For example, your template folder is "my-template" and your template namespace i
 jumpstart -tf my-template -tn My.Template -n My.Amazing.NewProject
 ```
 
+### Advanced (using an remote .zip template)
+You can use a remote .zip file as your template folder. For example, if you want to start a new project with any of those prebuilt apps that Xamarin make available on [http://xamarin.com/prebuilt](http://xamarin.com/prebuilt), you can use the command bellow to jumpstart your new project using those templates:
+
+##### jumpstart Xamarin Sport prebuilt app
+```shell
+jumpstart -tf https://github.com/xamarin/sport/archive/master.zip -tn Sport -n My.Sport 
+```
+
 > If you are using jumpstart in Mac/Linux, remember to call it with "mono " prefix.
+
+### Good pratices
+The jumpstart was designed to simplify the bootstrap of new projects based on templates/prebuilt solutions, with this in mind we recommend you use our conventions to facilitate the life of the user (programmer) that is using your template/prebuilt.
+
+We recommend you add the jumpstart.exe inside your .zip template/prebuilt, like this:
+
+Your.Amazing.Template.zip
+	/jumpstart-template
+	jumpstart.exe
+	readme.txt
+
+Inside the jumpstart-template folder is your whole template/prebuilt solution. You should use the JumpStartTemplate namespace in your template too.
+
+In the readme.txt add the following message:
+
+```txt
+To create a new project open prompt/terminal and type:
+	* In Windows: jumpstart -n [the namespace of the new project]
+ 	* In Mac/Linux: mono jumpstart.exe -n [the namespace of the new project] 
+```
+
+Of course, you can choose not use the convention template folder "jumpstart-template" and the the convention template namespace JumpStartTemplate, but using them you'll really keep things simple to your template/prebuilt user.
 
 
 ###Cross-platform
 - Mono support.
 - Fully tested on Windows and Mac.
 
-### Tests
+### Tests 
 jumpstart was successfully tested on templates of:
 
 - C# class library projects
