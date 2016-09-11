@@ -74,7 +74,7 @@ namespace Giacomelli.JumpStart
 			return templateFolderPath;
 		}
 
-		private void ClearDestinations(string sourceZipFile, string destinationFolder, string destinationTempFolder)
+		private static void ClearDestinations(string sourceZipFile, string destinationFolder, string destinationTempFolder)
 		{
 			if (File.Exists(sourceZipFile))
 			{
@@ -95,7 +95,7 @@ namespace Giacomelli.JumpStart
 		/// <summary>
 		/// http://stackoverflow.com/a/7581824/956886
 		/// </summary>
-		private bool IsUrl(string templateFolderPath)
+		private static bool IsUrl(string templateFolderPath)
 		{
 			Uri uriResult;
 
