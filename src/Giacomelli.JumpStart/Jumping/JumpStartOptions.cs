@@ -137,7 +137,7 @@ namespace Giacomelli.JumpStart
 				},
 				{
 					"f|folder=",
-					"The relative path to folder where the jumpstart will write the resulted project. Optional.",
+					"The relative path to folder where the jumpstart will write the resulted project. Optional. Default: same of n|namespace argument.",
 					f => options.Folder = f
 				},
 				{
