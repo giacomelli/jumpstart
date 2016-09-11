@@ -43,5 +43,14 @@ namespace Giacomelli.JumpStart.FunctionalTests
 			FileAssert.Exists("jumpstart-template/README.md");
 			FileAssert.Exists("jumpstart-template/Sport.Mobile.sln");
 		}
+
+		[Test]
+		public void Process_HttpZipNotSubFoldedr_DownloadAndUnzip()
+		{
+			var target = new WebZipTemplateFolderHandler(new NormalVerbosityLog());
+			var actual = target.Process("http://diegogiacomelli.com.br/labs/testing-js-dos/sample.zip");
+			Assert.AreEqual("jumpstart-template", actual);
+			FileAssert.Exists("jumpstart-template/nibble.html");
+		}
 	}
 }

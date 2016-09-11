@@ -55,6 +55,7 @@ namespace Giacomelli.JumpStart
 					{
 						// Move the subfolder content to root folder.
 						Directory.Move(subfolders[0], destinationFolder);
+						Directory.Delete(destinationTempFolder);
 					}
 					else 
 					{
@@ -62,7 +63,6 @@ namespace Giacomelli.JumpStart
 					}
 				}
 
-				Directory.Delete(destinationTempFolder);
 				templateFolderPath = destinationFolder;
 			}
 
@@ -76,14 +76,14 @@ namespace Giacomelli.JumpStart
 				File.Delete(sourceZipFile);
 			}
 
-			if (File.Exists(destinationFolder))
+			if (Directory.Exists(destinationFolder))
 			{
-				File.Delete(destinationFolder);
+				Directory.Delete(destinationFolder, true);
 			}
 
-			if (File.Exists(destinationTempFolder))
+			if (Directory.Exists(destinationTempFolder))
 			{
-				File.Delete(destinationTempFolder);
+				Directory.Delete(destinationTempFolder, true);
 			}
 		}
 
