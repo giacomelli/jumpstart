@@ -28,6 +28,33 @@ namespace Giacomelli.JumpStart.UnitTests
 			Assert.IsTrue(target.ShowHelp);
 		}
 
+
+		[Test]
+		public void Create_FilesRegex_ShowHelp()
+		{
+			var target = JumpStartOptions.Create(new string[] { "-fr", ".*" });
+			Assert.IsNotNull(target);
+			Assert.AreEqual(null, target.Namespace);
+			Assert.AreEqual(".*", target.FilesRegex);
+		}
+
+		[Test]
+		public void Create_Help_ShowHelp()
+		{
+			var target = JumpStartOptions.Create(new string[] { "-h" });
+			Assert.IsNotNull(target);
+			Assert.AreEqual(null, target.Namespace);
+			Assert.IsFalse(String.IsNullOrEmpty(target.HelpText));
+			Assert.IsTrue(target.ShowHelp);
+
+			target = JumpStartOptions.Create(new string[] { "-help" });
+			Assert.IsNotNull(target);
+			Assert.AreEqual(null, target.Namespace);
+			Assert.IsFalse(String.IsNullOrEmpty(target.HelpText));
+			Assert.IsTrue(target.ShowHelp);
+		}
+
+
 		[Test]
 		public void Create_AllArgs_Properties()
 		{
