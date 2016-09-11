@@ -2,13 +2,11 @@
       <Words>
          <Recognized>
              <Word>Giacomelli</Word>
-            <Word>JumpStart</Word>
-            <Word>s_log</Word>
          </Recognized>
       </Words>
       <Compound>
         <Term CompoundAlternate="JumpStart">JumpStart</Term>
-        <Term CompoundAlternate="s_log">slog</Term>
+        <Term CompoundAlternate="slog">s_log</Term>
       </Compound>
       <Acronyms>
         <CasingExceptions>
