@@ -33,14 +33,5 @@ namespace Giacomelli.JumpStart
 		public virtual void Warn(string message, params object[] args)
 		{
 		}
-
-		/// <summary>
-		/// Write an error message to jumpstart log.
-		/// </summary>
-		/// <param name="message">Message.</param>
-		/// <param name="args">Arguments.</param>
-		public virtual void Error(string message, params object[] args)
-		{
-		}
 	}
 }

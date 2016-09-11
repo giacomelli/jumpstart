@@ -61,21 +61,21 @@ namespace Giacomelli.JumpStart
 				});
 		}
 
-		private void CopyDir(string src, string dest, Func<string, string, string> transformFileContent)
+		private void CopyDir(string source, string destination, Func<string, string, string> transformFileContent)
 		{
 			// Get source dirs and files.
-			var dirs = Directory.GetDirectories(src, "*", SearchOption.AllDirectories);
-			var files = Directory.GetFiles(src, "*.*", SearchOption.AllDirectories);
+			var dirs = Directory.GetDirectories(source, "*", SearchOption.AllDirectories);
+			var files = Directory.GetFiles(source, "*.*", SearchOption.AllDirectories);
 			m_progress.NotifyBegin(files.Length);
 
 			// Create the destination dirs.
-			Directory.CreateDirectory(dest);
+			Directory.CreateDirectory(destination);
 
 			foreach (string path in dirs)
 			{
-				var newPath = ToNewPath(path, src, dest);
+				var newPath = ToNewPath(path, source, destination);
 				m_log.Debug("Creating dir '{0}'", newPath);
-				Directory.CreateDirectory(ToNewPath(path, src, dest));
+				Directory.CreateDirectory(ToNewPath(path, source, destination));
 			}
 
 			// Only files that respect this regex will be content transformed.
@@ -85,7 +85,7 @@ namespace Giacomelli.JumpStart
 			for (int i = 0; i < files.Length; i++)
 			{
 				var file = files[i];
-				var newPath = ToNewPath(file, src, dest);
+				var newPath = ToNewPath(file, source, destination);
 				m_log.Debug("Copying file '{0}'", newPath);
 				File.Copy(file, newPath, true);
 
@@ -109,14 +109,14 @@ namespace Giacomelli.JumpStart
 			m_progress.NotifyEnd();
 		}
 
-		private string ToNewPath(string path, string src, string dest)
+		private string ToNewPath(string path, string source, string destination)
 		{
-			var relativePath = path.Replace(src, string.Empty);
+			var relativePath = path.Replace(source, string.Empty);
 			relativePath = relativePath.Replace(m_options.TemplateNamespace, m_options.Namespace);
 
 			var isRooted = relativePath.StartsWith(Path.DirectorySeparatorChar.ToString(), StringComparison.OrdinalIgnoreCase);
 
-			return Path.Combine(dest, isRooted ? relativePath.Substring(1) : relativePath);
+			return Path.Combine(destination, isRooted ? relativePath.Substring(1) : relativePath);
 		}
 		#endregion
 

@@ -1,8 +1,15 @@
 <Dictionary>
       <Words>
          <Recognized>
-             <Word>Giacomelli</Word> 
-            <Word>JumpStart</Word> 
-         </Recognized>         
-      </Words>      
+             <Word>Giacomelli</Word>
+            <Word>JumpStart</Word>
+            <Word>s_log</Word>
+         </Recognized>
+      </Words>
+      <Acronyms>
+        <CasingExceptions>
+          <Acronym>JumpStart</Acronym>
+          <Acronym>jumpstart</Acronym>
+        </CasingExceptions>
+      </Acronyms>
 </Dictionary>

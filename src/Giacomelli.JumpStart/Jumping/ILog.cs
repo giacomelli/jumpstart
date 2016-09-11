@@ -27,12 +27,5 @@ namespace Giacomelli.JumpStart
 		/// <param name="message">Message.</param>
 		/// <param name="args">Arguments.</param>
 		void Warn(string message, params object[] args);
-
-		/// <summary>
-		/// Write an error message to jumpstart log.
-		/// </summary>
-		/// <param name="message">Message.</param>
-		/// <param name="args">Arguments.</param>
-		void Error(string message, params object[] args);
 	}
 }

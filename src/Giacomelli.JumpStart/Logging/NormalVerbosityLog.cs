@@ -38,16 +38,6 @@ namespace Giacomelli.JumpStart
 			Console.WriteLine(message, args);
 		}
 
-		/// <summary>
-		/// Write an error message to jumpstart log.
-		/// </summary>
-		/// <param name="message">Message.</param>
-		/// <param name="args">Arguments.</param>
-		public void Error(string message, params object[] args)
-		{
-			Console.WriteLine(message, args);
-		}
-
 		void IProgress.NotifyBegin(int totalFiles)
 		{
 			m_totalFiles = totalFiles; 
