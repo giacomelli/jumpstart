@@ -38,10 +38,10 @@ namespace Giacomelli.JumpStart.FunctionalTests
 		public void Process_HttpZip_DownloadAndUnzip()
 		{
 			var target = new WebZipTemplateFolderHandler(new NormalVerbosityLog());
-			var actual = target.Process("https://github.com/giacomelli/jumpstart/archive/master.zip");
+			var actual = target.Process("https://github.com/xamarin/sport/archive/master.zip");
 			Assert.AreEqual("jumpstart-template", actual);
-			FileAssert.Exists("jumpstart-template/readme.md");
-			FileAssert.Exists("jumpstart-template/src/Giacomelli.JumpStart.sln");
+			FileAssert.Exists("jumpstart-template/README.md");
+			FileAssert.Exists("jumpstart-template/Sport.Mobile.sln");
 		}
 	}
 }
