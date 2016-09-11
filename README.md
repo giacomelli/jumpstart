@@ -88,10 +88,12 @@ The jumpstart was designed to simplify the bootstrap of new projects based on te
 
 We recommend you add the jumpstart.exe inside your .zip template/prebuilt, like this:
 
+```shell
 Your.Amazing.Template.zip
 	/jumpstart-template
-	jumpstart.exe
-	readme.txt
+	/jumpstart.exe
+	/readme.txt
+```	
 
 Inside the jumpstart-template folder is your whole template/prebuilt solution. You should use the JumpStartTemplate namespace in your template too.
 
