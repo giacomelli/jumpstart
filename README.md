@@ -78,7 +78,14 @@ jumpstart -tf my-template -tn My.Template -n My.Amazing.NewProject
 
 ###Cross-platform
 - Mono support.
-- Fully tested on Windows and MacOSX.
+- Fully tested on Windows and Mac.
+
+### Tests
+jumpstart was successfully tested on templates of:
+
+- C# class library projects
+- ASP .NET MVC projects 
+- Unity3d projects
 
 ###Code quality
 - 100% unit test code coverage.
@@ -87,9 +94,6 @@ jumpstart -tf my-template -tn My.Template -n My.Amazing.NewProject
 - Good (and well used) design patterns.  
 - 100% code documentation
 
---------
-
- 
 --------
 
 FAQ
