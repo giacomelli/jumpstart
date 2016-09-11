@@ -13,9 +13,9 @@ namespace Giacomelli.JumpStart.FunctionalTests
 		{
 			Environment.CurrentDirectory = AppDomain.CurrentDomain.BaseDirectory;
 
-			if (Directory.Exists("TestsResults"))
+			if (Directory.Exists("TR"))
 			{
-				Directory.Delete("TestsResults", true);
+				Directory.Delete("TR", true);
 			}
 		}
 
@@ -116,7 +116,7 @@ namespace Giacomelli.JumpStart.FunctionalTests
 			AssertFile("My.Test.userprefs", "My.Test", templateNamespace);
 		}
 
-		private void Build(string templateNamespace, string n = "My.Test", string f = "TestsResults")
+		private void Build(string templateNamespace, string n = "My.Test", string f = "TR")
 		{
 			var resourcesFolder = VSProjectHelper.GetProjectFolderPath("Giacomelli.JumpStart.FunctionalTests");
 			resourcesFolder = Path.Combine(resourcesFolder, "Resources");
@@ -133,7 +133,7 @@ namespace Giacomelli.JumpStart.FunctionalTests
 			target.Jump();
 		}
 
-		private static void AssertFile(string filePath, string expectedFileContent, string notExpectedFileContent, string rootFolder = "TestsResults")
+		private static void AssertFile(string filePath, string expectedFileContent, string notExpectedFileContent, string rootFolder = "TR")
 		{
 			var fileName = Path.Combine(rootFolder, filePath);
 			TestSharp.FileAssert.ContainsContent(expectedFileContent, fileName);
