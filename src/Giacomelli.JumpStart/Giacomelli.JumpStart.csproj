@@ -53,7 +53,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
-    <None Include="CustomDictionary.xml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Logging\" />
