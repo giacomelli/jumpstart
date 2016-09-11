@@ -87,13 +87,6 @@ jumpstart was successfully tested on templates of:
 - ASP .NET MVC projects 
 - Unity3d projects
 
-###Code quality
-- 100% unit test code coverage.
-- FxCop validated.
-- Code duplicated verification.
-- Good (and well used) design patterns.  
-- 100% code documentation
-
 --------
 
 FAQ
