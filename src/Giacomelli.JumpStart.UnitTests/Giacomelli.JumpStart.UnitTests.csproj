@@ -37,6 +37,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Jumping\JumpStartOptionsTest.cs" />
+    <Compile Include="Logging\QuietVerbosityLogTest.cs" />
+    <Compile Include="TestHelper.cs" />
+    <Compile Include="Logging\NormalVerbosityLogTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -49,6 +52,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Jumping\" />
+    <Folder Include="Logging\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>

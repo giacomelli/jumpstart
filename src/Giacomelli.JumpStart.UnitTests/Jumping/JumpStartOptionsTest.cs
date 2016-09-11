@@ -29,10 +29,10 @@ namespace Giacomelli.JumpStart.UnitTests
 		}
 
 		[Test]
-		public void Create_ValidArgs_Properties()
+		public void Create_AllArgs_Properties()
 		{
 			var actual = JumpStartOptions.Create(
-				"-n", "My.Great.Solution", 
+				"-n", "My.Great.Solution",
 				"-f", "MyGreatFolder",
 				"-tn", "My.Template.Solution",
 				"-tf", "MyTemplateFolder"
@@ -45,8 +45,12 @@ namespace Giacomelli.JumpStart.UnitTests
 			Assert.AreEqual("MyTemplateFolder", actual.TemplateFolder);
 			Assert.IsTrue(String.IsNullOrEmpty(actual.HelpText));
 			Assert.IsFalse(actual.ShowHelp);
+		}
 
-			actual = JumpStartOptions.Create(
+		[Test]
+		public void Create_OnlyNamespaceArg_Conventions()
+		{
+			var actual = JumpStartOptions.Create(
 				"-n", "My.Great.Solution"
 			);
 
@@ -57,8 +61,12 @@ namespace Giacomelli.JumpStart.UnitTests
 			Assert.AreEqual("jumpstart-template", actual.TemplateFolder);
 			Assert.IsTrue(String.IsNullOrEmpty(actual.HelpText));
 			Assert.IsFalse(actual.ShowHelp);
+		}
 
-			actual = JumpStartOptions.Create(new string[] { 
+		[Test]
+		public void Create_AllNotShortcutArgs_Properties()
+		{
+			var actual = JumpStartOptions.Create(new string[] { 
 				"-namespace", "My.Great.Solution", 
 				"-folder", "MyGreatFolder",
 				"-template-namespace", "My.Template.Solution" ,

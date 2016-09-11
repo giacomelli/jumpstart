@@ -20,6 +20,17 @@ namespace Giacomelli.JumpStart.FunctionalTests
 		}
 
 		[Test]
+		public void Build_TemplateFolderDoesNotExist_Exception()
+		{
+			Assert.Catch(delegate
+			{
+				Build("Wrong");
+			},
+			"The folder with the template solution does not exists: Wrong");
+		}
+
+
+		[Test]
 		public void Build_SimpleTemplate_Built()
 		{
 			var templateNamespace = "Sample.SimpleTemplate";

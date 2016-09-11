@@ -33,6 +33,15 @@ namespace Giacomelli.JumpStart.FunctionalTests
 		}
 
 		[Test]
+		public void Run_InvalidArgss_LogError()
+		{
+			var output = ProcessHelper.Run(s_exePath, "-v wrong");
+
+			Assert.IsNotNull(output);
+			Assert.AreEqual("Requested value 'wrong' was not found.\n", output);
+		}
+
+		[Test]
 		public void Run_NoArgs_Help()
 		{
 			var output = ProcessHelper.Run(s_exePath);
