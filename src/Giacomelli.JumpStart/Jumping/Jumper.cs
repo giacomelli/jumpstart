@@ -1,4 +1,5 @@
 using System;
+using System.Diagnostics.CodeAnalysis;
 using System.IO;
 using System.Text.RegularExpressions;
 using HelperSharp;
@@ -35,6 +36,7 @@ namespace Giacomelli.JumpStart
 		/// <summary>
 		/// Performs the jump start.
 		/// </summary>
+		[SuppressMessage("Microsoft.Globalization", "CA1308:NormalizeStringsToUppercase")]
 		public void Jump()
 		{
 			var currentPath = Environment.CurrentDirectory;

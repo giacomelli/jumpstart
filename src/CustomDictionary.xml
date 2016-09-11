@@ -6,6 +6,10 @@
             <Word>s_log</Word>
          </Recognized>
       </Words>
+      <Compound>
+        <Term CompoundAlternate="JumpStart">Jumpstart</Term>
+        <Term CompoundAlternate="s_log">slog</Term>
+      </Compound>
       <Acronyms>
         <CasingExceptions>
           <Acronym>JumpStart</Acronym>
