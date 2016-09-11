@@ -37,7 +37,7 @@ namespace Giacomelli.JumpStart.UnitTests
 				var target = new NormalVerbosityLog();
 				target.Warn("Test {0}", 1);
 			},
-			"Test 1\n");
+			"Test 1" + Environment.NewLine);
 		}
 	}
 }

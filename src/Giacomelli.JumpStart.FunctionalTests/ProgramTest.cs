@@ -38,7 +38,7 @@ namespace Giacomelli.JumpStart.FunctionalTests
 			var output = ProcessHelper.Run(s_exePath, "-v wrong");
 
 			Assert.IsNotNull(output);
-			Assert.AreEqual("Requested value 'wrong' was not found.\n", output);
+			StringAssert.Contains("Requested value 'wrong' was not found.", output);
 		}
 
 		[Test]
