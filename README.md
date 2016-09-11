@@ -20,9 +20,57 @@ The idea of tool was born a long time ago and became a little stronger every tim
 --------
 
 ##How it works?
+jumpstart is very simple, it get a folder with a template solution and copy it to a new folder replacing the root namespace of the template to the new project namespace. So, a template folder like this:
+
+```shell
+jumpstart-template/MyClass.cs
+jumpstart-template/Properties
+jumpstart-template/Properties/AssemblyInfo.cs
+jumpstart-template/JumpStartTemplate.csproj
+JumpStartTemplate.sln
+```
+
+With this command:
+```shell
+jumpstart -n My.Amazing.NewProject
+```
+
+Will become:
+```shell
+My.Amazing.NewProject/MyClass.cs
+My.Amazing.NewProject/Properties
+My.Amazing.NewProject/Properties/AssemblyInfo.cs
+My.Amazing.NewProject/My.Amazing.NewProject.csproj
+My.Amazing.NewProject.sln
+```
+
+> The MyClass.cs, AssemblyInfo.cs, My.Amazing.NewProject.csproj and My.Amazing.NewProject.sln contents was updated to use the namespace My.Amazing.NewProject.
 
 
-      
+## Usage
+### To see all available options type:
+```shell
+jumpstart -help
+```
+
+### Using convetions
+If your template folder is called "jumpstart-template" and its namespace is JumpStartTemplate, the only argument you need to pass to jumpstart is -n(namespace).
+
+```shell
+jumpstart -n My.Amazing.NewProject
+```
+
+> The "jumpstart-template" folder should be in the same folder where you are calling jumpstart.
+
+### Specifying template folder and namespace
+For example, your template folder is "my-template" and your template namespace is "My.Template", in this case you should call jumpstart in this way:
+```shell
+jumpstart -tf my-template -tn My.Template -n My.Amazing.NewProject
+```
+
+> If you are using jumpstart in Mac/Linux, remember to call it with "mono " prefix.
+
+
 ###Cross-platform
 - Mono support.
 - Fully tested on Windows and MacOSX.
@@ -35,10 +83,6 @@ The idea of tool was born a long time ago and became a little stronger every tim
 - 100% code documentation
 
 --------
-
-Usage
-===
-
 
  
 --------
