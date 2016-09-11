@@ -45,20 +45,15 @@ namespace Giacomelli.JumpStart
 				using (var client = new Downloader())
 				{
 					m_log.Warn("Downloading {0}...", templateFolderPath);
-
-					client.DownloadProgressChanged += (sender, e) =>
-					{
-						m_log.Warn("Download {0:p2}", e.ProgressPercentage);
-					};
 					client.DownloadFile(templateFolderPath, sourceZipFile);
 					ZipFile.ExtractToDirectory(sourceZipFile, destinationTempFolder);
 
-
-					// The entire zip content was extract to a sub-folder?
 					var subfolders = Directory.GetDirectories(destinationTempFolder);
 
+					// The entire zip content was extract to a sub-folder?
 					if (subfolders.Length == 1 && Directory.GetFiles(destinationTempFolder).Length == 0)
 					{
+						// Move the subfolder content to root folder.
 						Directory.Move(subfolders[0], destinationFolder);
 					}
 					else 
