@@ -45,8 +45,25 @@ namespace Giacomelli.JumpStart.FunctionalTests
 		}
 
 		[Test]
-		public void Process_HttpZipNotSubFoldedr_DownloadAndUnzip()
+		public void Process_HttpZipNotSubFolder_DownloadAndUnzip()
 		{
+			var target = new WebZipTemplateFolderHandler(new NormalVerbosityLog());
+			var actual = target.Process("http://diegogiacomelli.com.br/labs/testing-js-dos/sample.zip");
+			Assert.AreEqual("jumpstart-template", actual);
+			FileAssert.Exists("jumpstart-template/nibble.html");
+		}
+
+		[Test]
+		public void Process_DestinationFoldersAlreadExists_DeleteDestinationsAndDownloadAndUnzip()
+		{
+			var sourceZipFile = "jumpstart-template.zip";
+			var destinationTempFolder = "jumpstart-template-temp";
+			var destinationFolder = "jumpstart-template";
+
+			File.WriteAllText(sourceZipFile, "test");
+			Directory.CreateDirectory(destinationTempFolder);
+			Directory.CreateDirectory(destinationFolder);
+			
 			var target = new WebZipTemplateFolderHandler(new NormalVerbosityLog());
 			var actual = target.Process("http://diegogiacomelli.com.br/labs/testing-js-dos/sample.zip");
 			Assert.AreEqual("jumpstart-template", actual);
