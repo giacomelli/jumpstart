@@ -9,19 +9,22 @@ jumpstart
 
 jumpstart is a command-line tool to create new C# projects from prebuilt/templates.
 
-As experienced developers it's very common we have some kind of template solution when we start a new project. Maybe is the latest project we work on, maybe is a very good template we used all time to start a bootstrap of specific kind of project. I created jumpstart to simplify the process of create the new project based on those templates or prebuilt solutions.
+As experienced developers it's very common we have some kind of template solution when we start a new project. Maybe it's the latest project we work on, maybe it's a very good template we used every time to start a bootstrap of specific kind of project. 
 
-The idea of tool was born a long time ago and became a little stronger every time that I had to create a new project solution and had to create all the solution by hand, but when I saw the message bellow in the [http://xamarin.com/prebuilt](http://xamarin.com/prebuilt ) page I decide to finaly write the tool... and the name was very clear, almost.
+I created jumpstart to simplify the process of create the new project based on those templates or prebuilt solutions.
+
+The idea of the tool was born a long time ago and became a little stronger every time that I had to create a new project solution and had to create all the solution by hand, but when I saw the message bellow in the [http://xamarin.com/prebuilt](http://xamarin.com/prebuilt ) page I decided to finally write the tool... and the name was very clear, almost.
 
 ![](docs/images/Xamarin-jumpstart-message.png)
 
-> The first name that I thought to the tool was prebuilt, but later my friend [@GiusepeCasagrande](https://github.com/GiusepeCasagrande) convinced me that jumpstart was really better name... and he was right!
+> The first name that I thought to the tool was prebuilt, but later, my friend [@GiusepeCasagrande](https://github.com/GiusepeCasagrande) convinced me that jumpstart was really better name... and he was right!
 
 --------
 
-##How it works?
-jumpstart is very simple, it get a folder with a template solution and copy it to a new folder replacing the root namespace of the template to the new project namespace. So, a template folder like this:
+##How does it work?
+jumpstart is very simple, it get a folder with a template solution and copy it to a new folder replacing the root namespace of the template to the new project namespace. 
 
+A template folder like this:
 ```shell
 jumpstart-template/MyClass.cs
 jumpstart-template/Properties
@@ -44,16 +47,18 @@ My.Amazing.NewProject/My.Amazing.NewProject.csproj
 My.Amazing.NewProject.sln
 ```
 
-> The MyClass.cs, AssemblyInfo.cs, My.Amazing.NewProject.csproj and My.Amazing.NewProject.sln contents was updated to use the namespace My.Amazing.NewProject.
+> The MyClass.cs, AssemblyInfo.cs, My.Amazing.NewProject.csproj and My.Amazing.NewProject.sln contents was updated by jumpstart to use the namespace My.Amazing.NewProject.
 
 
 ## Usage
-### To see all available options type:
+### Available options:
+To see all available options.
+
 ```shell
 jumpstart -help
 ```
 
-### Using convetions
+### Basic (using conventions)
 If your template folder is called "jumpstart-template" and its namespace is JumpStartTemplate, the only argument you need to pass to jumpstart is -n(namespace).
 
 ```shell
@@ -62,7 +67,7 @@ jumpstart -n My.Amazing.NewProject
 
 > The "jumpstart-template" folder should be in the same folder where you are calling jumpstart.
 
-### Specifying template folder and namespace
+### Advanced (specifying template folder and namespace)
 For example, your template folder is "my-template" and your template namespace is "My.Template", in this case you should call jumpstart in this way:
 ```shell
 jumpstart -tf my-template -tn My.Template -n My.Amazing.NewProject
