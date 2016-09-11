@@ -1,0 +1,14 @@
+﻿<Properties StartupItem="Sample.WebAppTemplate/Sample.WebAppTemplate.csproj">
+  <MonoDevelop.Ide.ItemProperties.Sample.WebAppTemplate PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Sample.WebAppTemplate/Global.asax.cs">
+    <Files>
+      <File FileName="Sample.WebAppTemplate/Controllers/HomeController.cs" Line="5" Column="18" />
+      <File FileName="Sample.WebAppTemplate/Global.asax.cs" Line="18" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches /> 
+</Properties>

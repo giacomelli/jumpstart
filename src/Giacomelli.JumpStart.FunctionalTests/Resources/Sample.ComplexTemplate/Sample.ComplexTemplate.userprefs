@@ -1,0 +1,15 @@
+﻿<Properties StartupItem="Sample.ComplexTemplate.ConsoleApp/Sample.ComplexTemplate.ConsoleApp.csproj">
+  <MonoDevelop.Ide.ItemProperties.Sample.ComplexTemplate.ConsoleApp PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Sample.ComplexTemplate.ConsoleApp/Program.cs">
+    <Files>
+      <File FileName="Sample.ComplexTemplate.Infrastructure.Framework/MyFrameworkClass.cs" Line="4" Column="28" />
+      <File FileName="Sample.ComplexTemplate.Domain/MyDomainClass.cs" Line="10" Column="43" />
+      <File FileName="Sample.ComplexTemplate.ConsoleApp/Program.cs" Line="13" Column="34" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>

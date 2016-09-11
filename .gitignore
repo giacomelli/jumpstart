@@ -108,7 +108,6 @@ Backup*/
 UpgradeLog*.XML
 src/Samples/MonoGame/
 src/test-results/
-*.userprefs
 opencoverCoverage.xml
 *.nupkg
 stylecop-report.violations.xml
@@ -118,3 +117,4 @@ src/Giacomelli.JumpStart.FunctionalTests/Resources/Sample.Unity3dTemplate/Unity/
 build
 coverage.xml
 tools/CoverageReport
+Giacomelli.JumpStart.userprefs

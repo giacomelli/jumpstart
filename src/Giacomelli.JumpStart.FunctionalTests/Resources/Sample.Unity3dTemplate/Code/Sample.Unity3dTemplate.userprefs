@@ -1,0 +1,13 @@
+﻿<Properties StartupItem="Sample.Unity3dTemplate/Sample.Unity3dTemplate.csproj">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Sample.Unity3dTemplate/SampleController.cs">
+    <Files>
+      <File FileName="Sample.Unity3dTemplate/SampleController.cs" Line="7" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.Sample.Unity3dTemplate PreferredExecutionTarget="MonoDevelop.Default" />
+</Properties>
