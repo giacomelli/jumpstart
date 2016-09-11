@@ -117,7 +117,7 @@ namespace Giacomelli.JumpStart.FunctionalTests
 				"-tf", Path.Combine(resourcesFolder, templateNamespace),
 				"-tn", templateNamespace);
 
-			var log = new QuietVerbosityLog();
+			var log = new DiagnosticVerbosityLog();
 			var target = new Jumper(options, log);
 			target.Jump();
 		}
