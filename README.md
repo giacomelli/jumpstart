@@ -1,4 +1,4 @@
-jumpstart
+![jumpstart Icon](docs/images/JumpstartIcon.png)jumpstart
 ===========
 
 [![Build status](https://ci.appveyor.com/api/projects/status/00v2mfh13jolfyhd?svg=true)](https://ci.appveyor.com/project/giacomelli/jumpstart)
