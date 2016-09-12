@@ -13,7 +13,7 @@ As an experienced developers it's very common we have some kind of template solu
 
 I created jumpstart to simplify the process of create the new project based on those templates or prebuilt solutions.
 
-The idea of the tool was born a long time ago and became a little stronger every time that I had to create a new solution and all the projects projects by hand, but when I saw the message bellow in the [http://xamarin.com/prebuilt](http://xamarin.com/prebuilt ) page I decided to finally write the tool... and the name was very clear, almost.
+The idea of the tool was born a long time ago and became a little stronger every time that I had to create a new solution and all the projects by hand, but when I saw the message bellow in the [http://xamarin.com/prebuilt](http://xamarin.com/prebuilt ) page I decided to finally write the tool... and the name was very clear, almost.
 
 ![](docs/images/Xamarin-jumpstart-message.png)
 
