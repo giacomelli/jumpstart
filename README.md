@@ -80,7 +80,7 @@ You can use a remote .zip file as your template folder. For example, if you want
 
 ##### jumpstart Xamarin Sport prebuilt app
 ```shell
-jumpstart -tf https://github.com/xamarin/sport/archive/master.zip -tn Sport -n My.Sport 
+jumpstart -tf https://github.com/xamarin/sport/archive/master.zip -tn Sport.Mobile -n My.Sport.Mobile 
 ```
 
 > If you are using jumpstart in Mac/Linux, remember to call it with "mono " prefix.
