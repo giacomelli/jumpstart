@@ -50,3 +50,6 @@ artifacts:
     name: DupFinder-report
   - path: .\build\jumpstart.exe
     name: jumpstart.exe
+  - path: .\build\jumpstart.exe
+    name: jumpstart.exe.zip
+    type: zip
