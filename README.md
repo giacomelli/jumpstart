@@ -1,7 +1,7 @@
 ![jumpstart Icon](docs/images/jumpstart-icon.png)jumpstart
 ===========
 
-[![Build status](https://ci.appveyor.com/api/projects/status/00v2mfh13jolfyhd?svg=true)](https://ci.appveyor.com/project/giacomelli/jumpstart)
+[![Build status](https://ci.appveyor.com/api/projects/status/99cm2psgntc0ahmy?svg=true)](https://ci.appveyor.com/project/giacomelli/jumpstart)
 [![Coverage Status](https://coveralls.io/repos/giacomelli/jumpstart/badge.svg?branch=master&service=github)](https://coveralls.io/github/giacomelli/jumpstart?branch=master)
 [![FxCop](http://badgessharp.apphb.com/badges/giacomelli/jumpstart/FxCop)](https://ci.appveyor.com/project/giacomelli/jumpstart/build/artifacts)
 [![DupFinder](http://badgessharp.apphb.com/badges/giacomelli/jumpstart/DupFinder)](https://ci.appveyor.com/project/giacomelli/jumpstart/build/artifacts)
