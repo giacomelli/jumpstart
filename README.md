@@ -51,6 +51,8 @@ My.Amazing.NewProject.sln
 
 
 ## Usage
+Download it from our [releases page](https://github.com/giacomelli/jumpstart/releases).
+
 ### Available options:
 To see all available options.
 
