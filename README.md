@@ -1,4 +1,4 @@
-![jumpstart Icon](docs/images/JumpstartIcon.png)jumpstart
+![jumpstart Icon](docs/images/jumpstart-icon.png)jumpstart
 ===========
 
 [![Build status](https://ci.appveyor.com/api/projects/status/00v2mfh13jolfyhd?svg=true)](https://ci.appveyor.com/project/giacomelli/jumpstart)
@@ -73,7 +73,7 @@ For example, your template folder is "my-template" and your template namespace i
 jumpstart -tf my-template -tn My.Template -n My.Amazing.NewProject
 ```
 
-### Advanced (using an remote .zip template)
+### Advanced (using a remote .zip template)
 You can use a remote .zip file as your template folder. For example, if you want to start a new project with any of those prebuilt apps that Xamarin make available on [http://xamarin.com/prebuilt](http://xamarin.com/prebuilt), you can use the command bellow to jumpstart your new project using those templates:
 
 ##### jumpstart Xamarin Sport prebuilt app
