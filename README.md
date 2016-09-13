@@ -124,16 +124,15 @@ jumpstart was successfully tested on templates of:
 
 --------
 
-FAQ
-======
+### FAQ
 
 Having troubles? 
+Ask on Twitter [@ogiacomelli](http://twitter.com/ogiacomelli).
+ 
+ 
+#### Q. Why the namespace template within some files was not replaced?
 
-- Ask on Twitter [@ogiacomelli](http://twitter.com/ogiacomelli).
- 
- 
-Q. Why the namespace template within some files was not replaced?
-A. By default jumpstart use an interal regex, called files-regex to choosed what files must be replaced, the default pattern is:
+A. By default jumpstart use an interal regex, called files-regex to choose what files must be replaced, the default pattern is:
 
 ```csharp
 @"(\.cs|\.cshtml|\.csproj|\.sln|\.meta|\.asax|\.userprefs|\.config|\.sh|\.cmd|\.xaml)$"
@@ -144,7 +143,7 @@ If your file is not in this regex, you can use the -fr argument to use your own 
 For example, you want your .txt files to be replaced too. To this case, you can use the command bellow:
 
 ```shell
-jumpstart -n  My.Amazing.NewProject -fr "(\.cs|\.cshtml|\.csproj|\.sln|\.meta|\.asax|\.userprefs|\.config|\.sh|\.cmd|\.xaml|\.txt)$"
+jumpstart -fr "(\.cs|\.cshtml|\.csproj|\.sln|\.meta|\.asax|\.userprefs|\.config|\.sh|\.cmd|\.xaml|\.txt)$" -n  My.Amazing.NewProject
 ```
 
 > If you believe that your file extensions is a very default file extension to C# projects, please fork jumpsharp and add it to the default regex on file JumpStartOptions.cs and make a pull request.
