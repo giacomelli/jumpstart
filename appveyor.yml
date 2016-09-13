@@ -33,6 +33,8 @@ after_build:
 
     .\tools\build-ci.cmd
 
+    7z a .\build\jumpstart.exe.zip .\build\jumpstart.exe
+
 test_script:
  - ps: >-
     nunit3-console.exe "src\Giacomelli.JumpStart.UnitTests\bin\$env:CONFIGURATION\Giacomelli.JumpStart.UnitTests.dll" "src\Giacomelli.JumpStart.FunctionalTests\bin\$env:CONFIGURATION\Giacomelli.JumpStart.FunctionalTests.dll"
@@ -50,6 +52,5 @@ artifacts:
     name: DupFinder-report
   - path: .\build\jumpstart.exe
     name: jumpstart.exe
-  - path: .\build\jumpstart.exe
+  - path: .\build\jumpstart.exe.zip
     name: jumpstart.exe.zip
-    type: zip
