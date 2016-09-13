@@ -62,11 +62,13 @@ namespace Giacomelli.JumpStart.FunctionalTests
 		[Test]
 		public void Run_WebZipTemplateFolder_Done()
 		{
-			var output = ProcessHelper.Run(s_exePath, "-n Test1 -tf https://github.com/xamarin/sport/archive/master.zip -tn Sport");
+			var output = ProcessHelper.Run(s_exePath, "-n My.Sport.Mobile -tf https://github.com/xamarin/sport/archive/master.zip -tn Sport.Mobile");
 
 			Assert.IsNotNull(output);
 			StringAssert.Contains("Downloading https://github.com/xamarin/sport/archive/master.zip", output);
 			StringAssert.Contains("done.", output);
+			TestSharp.FileAssert.ContainsContent("My.Sport.Mobile.Shared.iOS", "My.Sport.Mobile/My.Sport.Mobile.iOS/AppDelegate.cs");
+			TestSharp.FileAssert.ContainsContent("\tx:Class=\"My.Sport.Mobile.Shared.AboutPage\"", "My.Sport.Mobile/My.Sport.Mobile.Shared/Pages/AboutPage.xaml");
 		}
 
 		[Test]

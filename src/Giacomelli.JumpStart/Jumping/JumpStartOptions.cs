@@ -45,7 +45,7 @@ namespace Giacomelli.JumpStart
 			TemplateFolder = "jumpstart-template";
 			TemplateNamespace = "JumpStartTemplate";
 			Folder = null;
-			FilesRegex = @"(\.cs|\.cshtml|\.csproj|\.sln|\.meta|\.asax|\.userprefs|\.config|\.sh|\.cmd)$";
+			FilesRegex = @"(\.cs|\.cshtml|\.csproj|\.sln|\.meta|\.asax|\.userprefs|\.config|\.sh|\.cmd|\.xaml)$";
 			Verbosity = Verbosity.Normal;
 		}
 
