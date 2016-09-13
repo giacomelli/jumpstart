@@ -69,6 +69,8 @@ namespace Giacomelli.JumpStart.FunctionalTests
 			StringAssert.Contains("done.", output);
 			TestSharp.FileAssert.ContainsContent("My.Sport.Mobile.Shared.iOS", "My.Sport.Mobile/My.Sport.Mobile.iOS/AppDelegate.cs");
 			TestSharp.FileAssert.ContainsContent("\tx:Class=\"My.Sport.Mobile.Shared.AboutPage\"", "My.Sport.Mobile/My.Sport.Mobile.Shared/Pages/AboutPage.xaml");
+            TestSharp.FileAssert.ContainsContent("My.Sport.Mobile", "My.Sport.Mobile/My.Sport.Mobile.iOS/Info.plist");
+            TestSharp.FileAssert.ContainsContent("My.Sport.Mobile", "My.Sport.Mobile/My.Sport.Mobile.Droid/Properties/AndroidManifest.xml");
 		}
 
 		[Test]
