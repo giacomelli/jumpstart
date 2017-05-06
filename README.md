@@ -1,5 +1,4 @@
-![jumpstart Icon](docs/images/jumpstart-icon.png)jumpstart
-===========
+# ![jumpstart Icon](docs/images/jumpstart-icon.png)jumpstart
 
 [![Build status](https://ci.appveyor.com/api/projects/status/99cm2psgntc0ahmy?svg=true)](https://ci.appveyor.com/project/giacomelli/jumpstart)
 [![Coverage Status](https://coveralls.io/repos/giacomelli/jumpstart/badge.svg?branch=master&service=github)](https://coveralls.io/github/giacomelli/jumpstart?branch=master)
@@ -21,7 +20,7 @@ The idea of the tool was born a long time ago and became a little stronger every
 
 --------
 
-##How does it work?
+## How does it work?
 jumpstart is very simple, it get a folder with a template solution and copy it to a new folder replacing the root namespace of the template to the new project namespace. 
 
 A template folder like this:
@@ -110,7 +109,7 @@ To create a new project open prompt/terminal and type:
 Of course, you can choose not use the convention template folder "jumpstart-template" and the the convention template namespace JumpStartTemplate, but using them you'll really keep things simple to your template/prebuilt user.
 
 
-###Cross-platform
+### Cross-platform
 - Mono support.
 - Fully tested on Windows and Mac.
 
@@ -149,15 +148,13 @@ jumpstart -fr "(\.cs|\.cshtml|\.csproj|\.sln|\.meta|\.asax|\.userprefs|\.config|
 > If you believe that your file extensions is a very default file extension to C# projects, please fork jumpsharp and add it to the default regex on file JumpStartOptions.cs and make a pull request.
  --------
 
-How to improve it?
-======
+### How to improve it?
 
 Create a fork of [jumpstart](https://github.com/giacomelli/jumpstart/fork). 
 
 Did you change it? [Submit a pull request](https://github.com/giacomelli/jumpstart/pull/new/master).
 
 
-License
-======
+### License
 Licensed under the The MIT License (MIT).
 In others words, you can use this library for developement any kind of software: open source, commercial, proprietary and alien.
